@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MGViewController : UIViewController
+@interface MGRootViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *logInButton;
+@property (weak, nonatomic) IBOutlet UIButton *logOutButton;
 @end

@@ -14,13 +14,14 @@
 		AB101A8D198A1B7B00FA8C56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101A8C198A1B7B00FA8C56 /* main.m */; };
 		AB101A91198A1B7B00FA8C56 /* MGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101A90198A1B7B00FA8C56 /* MGAppDelegate.m */; };
 		AB101A94198A1B7B00FA8C56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB101A92198A1B7B00FA8C56 /* Main.storyboard */; };
-		AB101A97198A1B7B00FA8C56 /* MGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101A96198A1B7B00FA8C56 /* MGViewController.m */; };
+		AB101A97198A1B7B00FA8C56 /* MGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101A96198A1B7B00FA8C56 /* MGRootViewController.m */; };
 		AB101A99198A1B7B00FA8C56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB101A98198A1B7B00FA8C56 /* Images.xcassets */; };
 		AB101AA0198A1B7B00FA8C56 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB101A9F198A1B7B00FA8C56 /* XCTest.framework */; };
 		AB101AA1198A1B7B00FA8C56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB101A80198A1B7B00FA8C56 /* Foundation.framework */; };
 		AB101AA2198A1B7B00FA8C56 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB101A84198A1B7B00FA8C56 /* UIKit.framework */; };
 		AB101AAA198A1B7B00FA8C56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB101AA8198A1B7B00FA8C56 /* InfoPlist.strings */; };
 		AB101AAC198A1B7B00FA8C56 /* MeditatorsGitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101AAB198A1B7B00FA8C56 /* MeditatorsGitTests.m */; };
+		AB101AFE198A459B00FA8C56 /* MGGithub.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101AFD198A459B00FA8C56 /* MGGithub.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +46,16 @@
 		AB101A8F198A1B7B00FA8C56 /* MGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGAppDelegate.h; sourceTree = "<group>"; };
 		AB101A90198A1B7B00FA8C56 /* MGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGAppDelegate.m; sourceTree = "<group>"; };
 		AB101A93198A1B7B00FA8C56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AB101A95198A1B7B00FA8C56 /* MGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGViewController.h; sourceTree = "<group>"; };
-		AB101A96198A1B7B00FA8C56 /* MGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGViewController.m; sourceTree = "<group>"; };
+		AB101A95198A1B7B00FA8C56 /* MGRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGRootViewController.h; sourceTree = "<group>"; };
+		AB101A96198A1B7B00FA8C56 /* MGRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGRootViewController.m; sourceTree = "<group>"; };
 		AB101A98198A1B7B00FA8C56 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AB101A9E198A1B7B00FA8C56 /* MeditatorsGitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditatorsGitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB101A9F198A1B7B00FA8C56 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AB101AA7198A1B7B00FA8C56 /* MeditatorsGitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MeditatorsGitTests-Info.plist"; sourceTree = "<group>"; };
 		AB101AA9198A1B7B00FA8C56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB101AAB198A1B7B00FA8C56 /* MeditatorsGitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeditatorsGitTests.m; sourceTree = "<group>"; };
+		AB101AFC198A459B00FA8C56 /* MGGithub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGithub.h; sourceTree = "<group>"; };
+		AB101AFD198A459B00FA8C56 /* MGGithub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGithub.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +118,10 @@
 				AB101A8F198A1B7B00FA8C56 /* MGAppDelegate.h */,
 				AB101A90198A1B7B00FA8C56 /* MGAppDelegate.m */,
 				AB101A92198A1B7B00FA8C56 /* Main.storyboard */,
-				AB101A95198A1B7B00FA8C56 /* MGViewController.h */,
-				AB101A96198A1B7B00FA8C56 /* MGViewController.m */,
+				AB101A95198A1B7B00FA8C56 /* MGRootViewController.h */,
+				AB101A96198A1B7B00FA8C56 /* MGRootViewController.m */,
+				AB101AFC198A459B00FA8C56 /* MGGithub.h */,
+				AB101AFD198A459B00FA8C56 /* MGGithub.m */,
 				AB101A98198A1B7B00FA8C56 /* Images.xcassets */,
 				AB101A87198A1B7B00FA8C56 /* Supporting Files */,
 			);
@@ -251,7 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB101A91198A1B7B00FA8C56 /* MGAppDelegate.m in Sources */,
-				AB101A97198A1B7B00FA8C56 /* MGViewController.m in Sources */,
+				AB101AFE198A459B00FA8C56 /* MGGithub.m in Sources */,
+				AB101A97198A1B7B00FA8C56 /* MGRootViewController.m in Sources */,
 				AB101A8D198A1B7B00FA8C56 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +463,7 @@
 				AB101AB1198A1B7B00FA8C56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB101AB2198A1B7B00FA8C56 /* Build configuration list for PBXNativeTarget "MeditatorsGitTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +472,7 @@
 				AB101AB4198A1B7B00FA8C56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
