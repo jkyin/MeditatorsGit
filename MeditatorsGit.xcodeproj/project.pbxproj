@@ -14,14 +14,17 @@
 		AB101A8D198A1B7B00FA8C56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101A8C198A1B7B00FA8C56 /* main.m */; };
 		AB101A91198A1B7B00FA8C56 /* MGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101A90198A1B7B00FA8C56 /* MGAppDelegate.m */; };
 		AB101A94198A1B7B00FA8C56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB101A92198A1B7B00FA8C56 /* Main.storyboard */; };
-		AB101A97198A1B7B00FA8C56 /* MGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101A96198A1B7B00FA8C56 /* MGRootViewController.m */; };
+		AB101A97198A1B7B00FA8C56 /* MGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101A96198A1B7B00FA8C56 /* MGLoginViewController.m */; };
 		AB101A99198A1B7B00FA8C56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB101A98198A1B7B00FA8C56 /* Images.xcassets */; };
 		AB101AA0198A1B7B00FA8C56 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB101A9F198A1B7B00FA8C56 /* XCTest.framework */; };
 		AB101AA1198A1B7B00FA8C56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB101A80198A1B7B00FA8C56 /* Foundation.framework */; };
 		AB101AA2198A1B7B00FA8C56 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB101A84198A1B7B00FA8C56 /* UIKit.framework */; };
 		AB101AAA198A1B7B00FA8C56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB101AA8198A1B7B00FA8C56 /* InfoPlist.strings */; };
 		AB101AAC198A1B7B00FA8C56 /* MeditatorsGitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101AAB198A1B7B00FA8C56 /* MeditatorsGitTests.m */; };
-		AB101AFE198A459B00FA8C56 /* MGGithub.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101AFD198A459B00FA8C56 /* MGGithub.m */; };
+		AB101AFE198A459B00FA8C56 /* MGGithubOauth.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101AFD198A459B00FA8C56 /* MGGithubOauth.m */; };
+		AB479BF51994AD3400E11477 /* MGNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB479BF41994AD3400E11477 /* MGNewsTableViewController.m */; };
+		AB479BF81994B7A000E11477 /* MGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB479BF71994B7A000E11477 /* MGTableViewCell.m */; };
+		AB479BFB1994C1B900E11477 /* MGGithubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB479BFA1994C1B900E11477 /* MGGithubRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +49,22 @@
 		AB101A8F198A1B7B00FA8C56 /* MGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGAppDelegate.h; sourceTree = "<group>"; };
 		AB101A90198A1B7B00FA8C56 /* MGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGAppDelegate.m; sourceTree = "<group>"; };
 		AB101A93198A1B7B00FA8C56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AB101A95198A1B7B00FA8C56 /* MGRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGRootViewController.h; sourceTree = "<group>"; };
-		AB101A96198A1B7B00FA8C56 /* MGRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGRootViewController.m; sourceTree = "<group>"; };
+		AB101A95198A1B7B00FA8C56 /* MGLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGLoginViewController.h; sourceTree = "<group>"; };
+		AB101A96198A1B7B00FA8C56 /* MGLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGLoginViewController.m; sourceTree = "<group>"; };
 		AB101A98198A1B7B00FA8C56 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AB101A9E198A1B7B00FA8C56 /* MeditatorsGitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditatorsGitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB101A9F198A1B7B00FA8C56 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AB101AA7198A1B7B00FA8C56 /* MeditatorsGitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MeditatorsGitTests-Info.plist"; sourceTree = "<group>"; };
 		AB101AA9198A1B7B00FA8C56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB101AAB198A1B7B00FA8C56 /* MeditatorsGitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeditatorsGitTests.m; sourceTree = "<group>"; };
-		AB101AFC198A459B00FA8C56 /* MGGithub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGithub.h; sourceTree = "<group>"; };
-		AB101AFD198A459B00FA8C56 /* MGGithub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGithub.m; sourceTree = "<group>"; };
+		AB101AFC198A459B00FA8C56 /* MGGithubOauth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGithubOauth.h; sourceTree = "<group>"; };
+		AB101AFD198A459B00FA8C56 /* MGGithubOauth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGithubOauth.m; sourceTree = "<group>"; };
+		AB479BF31994AD3400E11477 /* MGNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNewsTableViewController.h; sourceTree = "<group>"; };
+		AB479BF41994AD3400E11477 /* MGNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNewsTableViewController.m; sourceTree = "<group>"; };
+		AB479BF61994B7A000E11477 /* MGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTableViewCell.h; sourceTree = "<group>"; };
+		AB479BF71994B7A000E11477 /* MGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTableViewCell.m; sourceTree = "<group>"; };
+		AB479BF91994C1B900E11477 /* MGGithubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGithubRequest.h; sourceTree = "<group>"; };
+		AB479BFA1994C1B900E11477 /* MGGithubRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGithubRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,13 +124,17 @@
 		AB101A86198A1B7B00FA8C56 /* MeditatorsGit */ = {
 			isa = PBXGroup;
 			children = (
-				AB101A8F198A1B7B00FA8C56 /* MGAppDelegate.h */,
-				AB101A90198A1B7B00FA8C56 /* MGAppDelegate.m */,
 				AB101A92198A1B7B00FA8C56 /* Main.storyboard */,
-				AB101A95198A1B7B00FA8C56 /* MGRootViewController.h */,
-				AB101A96198A1B7B00FA8C56 /* MGRootViewController.m */,
-				AB101AFC198A459B00FA8C56 /* MGGithub.h */,
-				AB101AFD198A459B00FA8C56 /* MGGithub.m */,
+				AB479BF61994B7A000E11477 /* MGTableViewCell.h */,
+				AB479BF71994B7A000E11477 /* MGTableViewCell.m */,
+				AB101A95198A1B7B00FA8C56 /* MGLoginViewController.h */,
+				AB101A96198A1B7B00FA8C56 /* MGLoginViewController.m */,
+				AB479BF31994AD3400E11477 /* MGNewsTableViewController.h */,
+				AB479BF41994AD3400E11477 /* MGNewsTableViewController.m */,
+				AB101AFC198A459B00FA8C56 /* MGGithubOauth.h */,
+				AB101AFD198A459B00FA8C56 /* MGGithubOauth.m */,
+				AB479BF91994C1B900E11477 /* MGGithubRequest.h */,
+				AB479BFA1994C1B900E11477 /* MGGithubRequest.m */,
 				AB101A98198A1B7B00FA8C56 /* Images.xcassets */,
 				AB101A87198A1B7B00FA8C56 /* Supporting Files */,
 			);
@@ -131,6 +144,8 @@
 		AB101A87198A1B7B00FA8C56 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AB101A8F198A1B7B00FA8C56 /* MGAppDelegate.h */,
+				AB101A90198A1B7B00FA8C56 /* MGAppDelegate.m */,
 				AB101A88198A1B7B00FA8C56 /* MeditatorsGit-Info.plist */,
 				AB101A89198A1B7B00FA8C56 /* InfoPlist.strings */,
 				AB101A8C198A1B7B00FA8C56 /* main.m */,
@@ -256,9 +271,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB101A91198A1B7B00FA8C56 /* MGAppDelegate.m in Sources */,
-				AB101AFE198A459B00FA8C56 /* MGGithub.m in Sources */,
-				AB101A97198A1B7B00FA8C56 /* MGRootViewController.m in Sources */,
+				AB101AFE198A459B00FA8C56 /* MGGithubOauth.m in Sources */,
+				AB101A97198A1B7B00FA8C56 /* MGLoginViewController.m in Sources */,
 				AB101A8D198A1B7B00FA8C56 /* main.m in Sources */,
+				AB479BF51994AD3400E11477 /* MGNewsTableViewController.m in Sources */,
+				AB479BF81994B7A000E11477 /* MGTableViewCell.m in Sources */,
+				AB479BFB1994C1B900E11477 /* MGGithubRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,10 +13,12 @@ extern NSString * const accessToken;
 
 typedef void (^GithubRequestTokenCompletionHandler)(NSData *data, NSURLResponse *response, NSError *error);
 
-@interface MGGithub : NSObject
+@interface MGGithubOauth : NSObject
+
+@property (strong, nonatomic, readonly) NSString *accessToken;
 
 // oauth 流程
-+ (void)startOauthRequestWithCompletionHandler:(GithubRequestTokenCompletionHandler)completionHandler;
++ (void)startOauthRequest;
 + (void)requestAccessTokenWithCallbackURL:(NSURL *)url andCompletionHandler:(GithubRequestTokenCompletionHandler)completionHandler;
 
 // 辅助方法

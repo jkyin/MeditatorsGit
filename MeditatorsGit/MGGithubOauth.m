@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Yin Xiaoyu. All rights reserved.
 //
 
-#import "MGGithub.h"
+#import "MGGithubOauth.h"
 
 // Github stuff
 static NSString *client_id = @"e97b03211595b394c4c4";
@@ -15,10 +15,14 @@ static NSString *client_secret = @"beaa22be2462eeefc15680f0db446dbf0600eb3c";
 // saved in NSUserDefaults
 NSString * const accessToken = @"access_token";
 
-@implementation MGGithub
+
+
+@implementation MGGithubOauth
+
+#pragma mark - Oauth 2 flow
 
 // Github Oauth 验证第一步：打开授权页面。
-+ (void)startOauthRequestWithCompletionHandler:(GithubRequestTokenCompletionHandler)completionHandler
++ (void)startOauthRequest
 {
     NSString *urlString = [NSString stringWithFormat:@"https://github.com/login/oauth/authorize?client_id=%@", client_id];
     NSURL *url = [NSURL URLWithString:urlString];
