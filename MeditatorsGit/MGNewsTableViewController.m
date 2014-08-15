@@ -8,7 +8,7 @@
 
 #import "MGNewsTableViewController.h"
 #import "MGTableViewCell.h"
-#import "MGGithubRequest.h"
+#import "MGGithubNewsStore.h"
 
 
 @interface MGNewsTableViewController ()
@@ -17,49 +17,22 @@
 
 @implementation MGNewsTableViewController
 
-// 延迟初始化，始终在需要使用变量的时候才进行变量的初始化
-- (NSMutableArray *)eventsArray
-{
-    if (!_eventsArray) {
-        _eventsArray = [[NSMutableArray alloc] init];
-    }
-    
-    return _eventsArray;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self refresh];
+    
+    // 订阅通知：当数据源更新的时候刷新视图
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:@"updatedData" object:nil];
+    [[MGGithubNewsStore sharedStore] fetchNews];
 }
 
-/**
- *  刷新 JSON 数据
- */
 - (void)refresh
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    [MGGithubRequest requestNewsEventsWithCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (!error) {
-            NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*)response;
-            if (httpResp.statusCode == 200) {
-                self.eventsArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                LogCoco(@"\n%@", _eventsArray[0]);
-                
-                // 在主线程更新 UI
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                    [self.tableView reloadData];
-                });
-            }
-        } else {
-            LogYellow(@"json fetch error:%@", error);
-        }
-    }];
+    [self.tableView reloadData];
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableVIew Delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -68,7 +41,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_eventsArray count];
+    return [[MGGithubNewsStore sharedStore].eventsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,6 +49,11 @@
     MGTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MGCell"];
     
     return cell;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

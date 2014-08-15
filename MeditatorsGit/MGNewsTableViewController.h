@@ -11,8 +11,5 @@
 
 @interface MGNewsTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSMutableArray *eventsArray;
-
-- (void)refresh;
 
 @end

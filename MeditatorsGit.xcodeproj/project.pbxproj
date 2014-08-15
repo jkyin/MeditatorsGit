@@ -22,6 +22,7 @@
 		AB101AAA198A1B7B00FA8C56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB101AA8198A1B7B00FA8C56 /* InfoPlist.strings */; };
 		AB101AAC198A1B7B00FA8C56 /* MeditatorsGitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101AAB198A1B7B00FA8C56 /* MeditatorsGitTests.m */; };
 		AB101AFE198A459B00FA8C56 /* MGGithubOauth.m in Sources */ = {isa = PBXBuildFile; fileRef = AB101AFD198A459B00FA8C56 /* MGGithubOauth.m */; };
+		AB263076199DA65D008E71D7 /* MGGithubNewsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AB263075199DA65D008E71D7 /* MGGithubNewsStore.m */; };
 		AB479BF51994AD3400E11477 /* MGNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB479BF41994AD3400E11477 /* MGNewsTableViewController.m */; };
 		AB479BF81994B7A000E11477 /* MGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB479BF71994B7A000E11477 /* MGTableViewCell.m */; };
 		AB479BFB1994C1B900E11477 /* MGGithubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB479BFA1994C1B900E11477 /* MGGithubRequest.m */; };
@@ -59,6 +60,8 @@
 		AB101AAB198A1B7B00FA8C56 /* MeditatorsGitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeditatorsGitTests.m; sourceTree = "<group>"; };
 		AB101AFC198A459B00FA8C56 /* MGGithubOauth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGithubOauth.h; sourceTree = "<group>"; };
 		AB101AFD198A459B00FA8C56 /* MGGithubOauth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGithubOauth.m; sourceTree = "<group>"; };
+		AB263074199DA65D008E71D7 /* MGGithubNewsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGithubNewsStore.h; sourceTree = "<group>"; };
+		AB263075199DA65D008E71D7 /* MGGithubNewsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGithubNewsStore.m; sourceTree = "<group>"; };
 		AB479BF31994AD3400E11477 /* MGNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNewsTableViewController.h; sourceTree = "<group>"; };
 		AB479BF41994AD3400E11477 /* MGNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNewsTableViewController.m; sourceTree = "<group>"; };
 		AB479BF61994B7A000E11477 /* MGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTableViewCell.h; sourceTree = "<group>"; };
@@ -131,10 +134,7 @@
 				AB101A96198A1B7B00FA8C56 /* MGLoginViewController.m */,
 				AB479BF31994AD3400E11477 /* MGNewsTableViewController.h */,
 				AB479BF41994AD3400E11477 /* MGNewsTableViewController.m */,
-				AB101AFC198A459B00FA8C56 /* MGGithubOauth.h */,
-				AB101AFD198A459B00FA8C56 /* MGGithubOauth.m */,
-				AB479BF91994C1B900E11477 /* MGGithubRequest.h */,
-				AB479BFA1994C1B900E11477 /* MGGithubRequest.m */,
+				AB263077199DA66B008E71D7 /* Model */,
 				AB101A98198A1B7B00FA8C56 /* Images.xcassets */,
 				AB101A87198A1B7B00FA8C56 /* Supporting Files */,
 			);
@@ -170,6 +170,19 @@
 				AB101AA8198A1B7B00FA8C56 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB263077199DA66B008E71D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB101AFC198A459B00FA8C56 /* MGGithubOauth.h */,
+				AB101AFD198A459B00FA8C56 /* MGGithubOauth.m */,
+				AB479BF91994C1B900E11477 /* MGGithubRequest.h */,
+				AB479BFA1994C1B900E11477 /* MGGithubRequest.m */,
+				AB263074199DA65D008E71D7 /* MGGithubNewsStore.h */,
+				AB263075199DA65D008E71D7 /* MGGithubNewsStore.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +288,7 @@
 				AB101A97198A1B7B00FA8C56 /* MGLoginViewController.m in Sources */,
 				AB101A8D198A1B7B00FA8C56 /* main.m in Sources */,
 				AB479BF51994AD3400E11477 /* MGNewsTableViewController.m in Sources */,
+				AB263076199DA65D008E71D7 /* MGGithubNewsStore.m in Sources */,
 				AB479BF81994B7A000E11477 /* MGTableViewCell.m in Sources */,
 				AB479BFB1994C1B900E11477 /* MGGithubRequest.m in Sources */,
 			);
