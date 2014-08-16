@@ -11,19 +11,28 @@
 
 @interface MGGithubNewsStore ()
 
-@property (nonatomic, strong, readwrite) NSArray *eventsArray;
+@property (nonatomic, strong, readwrite) NSDictionary *eventsDic;
 @end
 
 @implementation MGGithubNewsStore
 
 // 延迟初始化，始终在需要使用变量的时候才进行变量的初始化
-- (NSArray *)eventsArray
+- (NSDictionary *)eventsDic
 {
-    if (!_eventsArray) {
-        _eventsArray = [[NSArray alloc] init];
+    if (!_eventsDic) {
+        _eventsDic = [[NSDictionary alloc] init];
     }
     
-    return _eventsArray;
+    return _eventsDic;
+}
+
+- (NSArray *)createdAtArray
+{
+    if (!_createdAtArray) {
+        _createdAtArray = [[NSArray alloc] init];
+    }
+    
+    return _createdAtArray;
 }
 
 + (instancetype)sharedStore {
@@ -47,8 +56,9 @@
             NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*)response;
             
             if (httpResp.statusCode == 200) {
-                self.eventsArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-//                LogCoco(@"\n%@", self.eventsArray);
+                self.eventsDic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                self.createdAtArray = [self.eventsDic valueForKey:@"created_at"];
+                LogCoco(@"\n%@", self.createdAtArray);
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;

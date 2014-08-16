@@ -41,12 +41,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[MGGithubNewsStore sharedStore].eventsArray count];
+    return [[MGGithubNewsStore sharedStore].eventsDic count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *dateString = [MGGithubNewsStore sharedStore].createdAtArray[indexPath.row];
+//    NSLog(@"%@", date);
     MGTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MGCell"];
+    
+    [cell.createdAtLabel setText:dateString];
+    
     
     return cell;
 }

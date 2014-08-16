@@ -10,8 +10,9 @@
 
 @interface MGGithubNewsStore : NSObject
 
-@property (nonatomic, strong, readonly) NSArray *eventsArray;
-@property (nonatomic, strong) NSDictionary *eventsDic;
+@property (nonatomic, strong, readonly) NSDictionary *eventsDic;
+@property (nonatomic, strong) NSArray *createdAtArray;
+
 + (instancetype)sharedStore;
 - (void)fetchNews;
 
