@@ -44,7 +44,6 @@ NSString * const accessToken = @"access_token";
     LogCoco(@"%@", urlString);
 }
 
-
 #pragma mark - 辅助方法
 
 // 获取随机 Code

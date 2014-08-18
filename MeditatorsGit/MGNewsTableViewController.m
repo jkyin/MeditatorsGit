@@ -47,10 +47,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *dateString = [MGGithubNewsStore sharedStore].createdAtArray[indexPath.row];
+    NSString *loginString = [MGGithubNewsStore sharedStore].loginArray[indexPath.row];
 //    NSLog(@"%@", date);
     MGTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MGCell"];
     
     [cell.createdAtLabel setText:dateString];
+    [cell.actorLoginLabel setText:loginString];
     
     
     return cell;

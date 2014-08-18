@@ -35,6 +35,15 @@
     return _createdAtArray;
 }
 
+- (NSMutableArray *)loginArray
+{
+    if (!_loginArray) {
+        _loginArray = [[NSMutableArray alloc] init];
+    }
+    
+    return _loginArray;
+}
+
 + (instancetype)sharedStore {
     static id sharedInstance = nil;
     
@@ -56,9 +65,20 @@
             NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*)response;
             
             if (httpResp.statusCode == 200) {
+                // 解析 JSON
                 self.eventsDic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                
                 self.createdAtArray = [self.eventsDic valueForKey:@"created_at"];
-                LogCoco(@"\n%@", self.createdAtArray);
+                NSArray *arr;
+                arr = [self.eventsDic valueForKey:@"actor"];
+                
+                NSString *loginString;
+                for (NSDictionary *obj in arr) {
+                    loginString = [obj valueForKey:@"login"];
+//                    NSLog(@"%@", loginString);
+                    [self.loginArray addObject:loginString];
+                }
+                NSLog(@"%@", self.loginArray);
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;

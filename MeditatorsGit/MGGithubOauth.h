@@ -15,7 +15,7 @@ typedef void (^GithubRequestTokenCompletionHandler)(NSData *data, NSURLResponse 
 
 @interface MGGithubOauth : NSObject
 
-@property (strong, nonatomic, readonly) NSString *accessToken;
+@property (strong, readonly, nonatomic) NSString *accessToken;
 
 // oauth 流程
 + (void)startOauthRequest;
