@@ -17,14 +17,14 @@
 
 @implementation MGNewsTableViewController
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [[MGGithubNewsStore sharedStore] fetchNews];
+    
     // 订阅通知：当数据源更新的时候刷新视图
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:@"updatedData" object:nil];
-    [[MGGithubNewsStore sharedStore] fetchNews];
 }
 
 - (void)refresh
@@ -48,11 +48,13 @@
 {
     NSString *dateString = [MGGithubNewsStore sharedStore].createdAtArray[indexPath.row];
     NSString *loginString = [MGGithubNewsStore sharedStore].loginArray[indexPath.row];
-//    NSLog(@"%@", date);
+    UIImage *avatarImage = [MGGithubNewsStore sharedStore].avatarArray[indexPath.row];
+    
     MGTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MGCell"];
     
     [cell.createdAtLabel setText:dateString];
     [cell.actorLoginLabel setText:loginString];
+    [cell.avatarImageView setImage:avatarImage];
     
     
     return cell;

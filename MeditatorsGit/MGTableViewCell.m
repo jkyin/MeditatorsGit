@@ -21,7 +21,9 @@
 
 - (void)awakeFromNib
 {
-    // Initialization code
+    // 圆角视图
+    [self.avatarImageView.layer setMasksToBounds:YES];
+    [self.avatarImageView.layer setCornerRadius:3];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

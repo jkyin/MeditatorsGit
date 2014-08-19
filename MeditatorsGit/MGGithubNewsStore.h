@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSMutableDictionary *actorDictionary;
 @property (strong, nonatomic) NSArray *createdAtArray;
 @property (strong, nonatomic) NSMutableArray *loginArray;
+@property (strong, nonatomic) NSMutableArray *avatarArray;
 
 
 + (instancetype)sharedStore;

@@ -127,7 +127,6 @@
 		AB101A86198A1B7B00FA8C56 /* MeditatorsGit */ = {
 			isa = PBXGroup;
 			children = (
-				AB101A92198A1B7B00FA8C56 /* Main.storyboard */,
 				AB479BF61994B7A000E11477 /* MGTableViewCell.h */,
 				AB479BF71994B7A000E11477 /* MGTableViewCell.m */,
 				AB101A95198A1B7B00FA8C56 /* MGLoginViewController.h */,
@@ -144,6 +143,7 @@
 		AB101A87198A1B7B00FA8C56 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AB101A92198A1B7B00FA8C56 /* Main.storyboard */,
 				AB101A8F198A1B7B00FA8C56 /* MGAppDelegate.h */,
 				AB101A90198A1B7B00FA8C56 /* MGAppDelegate.m */,
 				AB101A88198A1B7B00FA8C56 /* MeditatorsGit-Info.plist */,

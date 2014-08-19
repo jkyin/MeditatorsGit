@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *actorLoginLabel;
 @property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+
 @end

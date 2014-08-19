@@ -44,6 +44,15 @@
     return _loginArray;
 }
 
+- (NSMutableArray *)avatarArray
+{
+    if (!_avatarArray) {
+        _avatarArray = [[NSMutableArray alloc] init];
+    }
+    
+    return _avatarArray;
+}
+
 + (instancetype)sharedStore {
     static id sharedInstance = nil;
     
@@ -65,27 +74,36 @@
             NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*)response;
             
             if (httpResp.statusCode == 200) {
-                // 解析 JSON
-                self.eventsDic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                
-                self.createdAtArray = [self.eventsDic valueForKey:@"created_at"];
-                NSArray *arr;
-                arr = [self.eventsDic valueForKey:@"actor"];
-                
-                NSString *loginString;
-                for (NSDictionary *obj in arr) {
-                    loginString = [obj valueForKey:@"login"];
-//                    NSLog(@"%@", loginString);
-                    [self.loginArray addObject:loginString];
-                }
-                NSLog(@"%@", self.loginArray);
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                NSError *jsonError = nil;
+                // 解析 JSON 数据
+                self.eventsDic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+                if (!jsonError) {
+                    self.createdAtArray = [self.eventsDic valueForKey:@"created_at"];
                     
-                    // 发布通知：数据源已经更新
-                    [[NSNotificationCenter defaultCenter] postNotificationName:@"updatedData" object:nil];
-                });
+                    NSArray *arr = [self.eventsDic valueForKey:@"actor"];
+                    for (NSDictionary *obj in arr) {
+                        NSString *loginString = [obj valueForKey:@"login"];
+                        
+                        // 从网址生成二进制数据，
+                        // 再把 data 转换成 Image
+                        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[obj valueForKey:@"avatar_url"]]];
+                        UIImage *avatarImage = [UIImage imageWithData:imageData];
+                        [self.loginArray addObject:loginString];
+                        [self.avatarArray addObject:avatarImage];
+                    }
+                    //                NSLog(@"%@", self.avatarArray);
+                    
+                    // 主线程操作
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                        
+                        // 发布通知：数据源已经更新
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"updatedData" object:nil];
+                    });
+                } else {
+                    LogYellow(@"error:%@", jsonError);
+                }
+                
             }
         } else {
             LogYellow(@"\n json fetch error:%@", error);
